@@ -7,6 +7,10 @@ echo "======="
 echo "ls /"
 ls /
 
+echo "====="
+echo "ls /github/workspace"
+ls /github/workspace
+
 exit 0
 
 # find . -name \*.info -exec touch '{}' \;
