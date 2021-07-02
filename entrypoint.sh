@@ -1,5 +1,8 @@
 #!/bin/sh -l
 
+arch="$1"
+echo "GOT ARCH = $1"
+
 find . -name \*.info -exec touch '{}' \;
 touch ./texk/detex/detex-src/detex.c
 touch ./texk/detex/detex-src/detex.h
@@ -25,8 +28,8 @@ export TL_MAKE_FLAGS
 
 ./Build -C
 
-mv inst/bin/* x86_64-linux
-tar czvf texlive-bin-x86_64-linux.tar.gz x86_64-linux
+mv inst/bin/* $arch
+tar czvf texlive-bin-$arch.tar.gz $arch
 
 #before_deploy:
 #  - if [ -n "$package" ]; then sudo mv inst/bin/* inst/bin/$tldir ; tar czvf ${package} -C inst/bin .; fi

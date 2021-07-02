@@ -1,16 +1,13 @@
 # action.yml
-name: 'TeX Live Container Build for x86-64'
+name: 'TeX Live Container Build'
 description: 'Used to build TeX Live release binaries'
-#inputs:
-#  who-to-greet:  # id of input
-#    description: 'Who to greet'
-#    required: true
-#    default: 'World'
-#outputs:
-#  time: # id of output
-#    description: 'The time we greeted you'
+inputs:
+  arch:  # id of input
+    description: 'Architecture to build'
+    required: true
+    default: 'x86_64-linux'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  #args:
-  #  - ${{ inputs.who-to-greet }}
+  args:
+    - ${{ inputs.arch }}
