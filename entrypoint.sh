@@ -25,6 +25,9 @@ export TL_MAKE_FLAGS
 
 ./Build -C
 
+mv inst/bin/* x86_64-linux
+tar czvf texlive-bin-x86_64-linux.tar.gz x86_64-linux
+
 #before_deploy:
 #  - if [ -n "$package" ]; then sudo mv inst/bin/* inst/bin/$tldir ; tar czvf ${package} -C inst/bin .; fi
 #  - if [ -r inst/bin/*/luahbtex ] ; then cp inst/bin/*/luahbtex luahbtex.$tldir ; fi
